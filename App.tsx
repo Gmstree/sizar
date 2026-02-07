@@ -419,7 +419,7 @@ const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleT
                 onClick={() => { onOpenStory(); setIsMobileMenuOpen(false); }} 
                 className="text-xl font-bold font-mono tracking-widest border-b pb-4 text-left hover:text-tech-accent transition-colors"
             >
-                >> ACCESS_STORY
+                &gt;&gt; ACCESS_STORY
             </button>
             {navItems.map(item => {
                 const [id, label] = item.split(':');
@@ -771,7 +771,7 @@ const BlueprintProjectCard = ({ project, index, isDark }: { project: any, index:
                              <div className="absolute inset-6 border border-dashed border-tech-accent rounded-full animate-pulse"></div>
                              <div className="absolute inset-0 flex items-center justify-center text-tech-accent font-bold text-xs animate-pulse">LOCK</div>
                           </div>
-                          <div className="bg-black/80 px-4 py-2 border border-tech-accent/30 text-tech-accent font-mono text-xs tracking-widest animate-glitch">>> ENCRYPTED_DATA</div>
+                          <div className="bg-black/80 px-4 py-2 border border-tech-accent/30 text-tech-accent font-mono text-xs tracking-widest animate-glitch">&gt;&gt; ENCRYPTED_DATA</div>
                       </div>
                    )}
                 </div>
@@ -832,7 +832,7 @@ const ProjectsSection = ({ isDark }: { isDark: boolean }) => {
             <Reveal>
                <h2 className={`text-5xl md:text-6xl font-black mb-6 transition-colors duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>DEPLOYED UNITS</h2>
                <div className={`w-1 h-24 mx-auto mb-6 ${isDark ? 'bg-white' : 'bg-black'}`}></div>
-               <p className="font-mono text-gray-400 text-sm tracking-[0.3em] uppercase"><span className="text-tech-accent">>></span> System Architecture & <br className="md:hidden"/>Visual Deployments</p>
+               <p className="font-mono text-gray-400 text-sm tracking-[0.3em] uppercase"><span className="text-tech-accent">&gt;&gt;</span> System Architecture & <br className="md:hidden"/>Visual Deployments</p>
             </Reveal>
 
             <Reveal delay={200}>
@@ -862,7 +862,7 @@ const ProjectsSection = ({ isDark }: { isDark: boolean }) => {
                </Reveal>
             ))}
             {filteredProjects.length === 0 && (
-               <div className="text-center py-32 font-mono text-gray-400 animate-pulse">>> NO ACTIVE MODULES FOUND IN SECTOR: {filter}</div>
+               <div className="text-center py-32 font-mono text-gray-400 animate-pulse">&gt;&gt; NO ACTIVE MODULES FOUND IN SECTOR: {filter}</div>
             )}
          </div>
       </section>
