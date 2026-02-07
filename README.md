@@ -1,9 +1,11 @@
 <div align="center">
   
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=350&section=header&text=S%20I%20Z%20A%20R&fontSize=80&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer&descAlignY=60&descSize=25&fontColor=ffffff&stroke=000000&strokeWidth=0" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,100:0f9b0f&height=300&section=header&text=S%20I%20Z%20A%20R&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=50&desc=FULL%20STACK%20DEVELOPER&descAlignY=75&descSize=20&stroke=00ff00&strokeWidth=2" width="100%" />
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=36BCF7&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;Building+Scalable+Web+Apps;Crafting+Beautiful+UI%2FUX" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&weight=700&size=24&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&width=500&lines=Building+Scalable+Applications;Designing+Premium+User+Interfaces;Engineering+Robust+Backends;Turning+Ideas+Into+Reality" alt="Typing SVG" />
   </a>
+
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 </div>
