@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 100px;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIZAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500;700;800&family=Teko:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@700&family=Noto+Sans+SC:wght@700&family=Noto+Sans+Arabic:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://github.com/Gmstree/Images/blob/main/fav.png?raw=true" />
+    
+    <!-- Preload Logos for Superfast Loading -->
+    <link rel="preload" as="image" href="https://github.com/Gmstree/Images/blob/main/blogo.png?raw=true">
+    <link rel="preload" as="image" href="https://github.com/Gmstree/Images/blob/main/wlogo.png?raw=true">
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+              digital: ['"Teko"', 'sans-serif'],
+              jp: ['"Noto Sans JP"', 'sans-serif'],
+              sc: ['"Noto Sans SC"', 'sans-serif'],
+              arabic: ['"Noto Sans Arabic"', 'sans-serif'],
+            },
+            colors: {
+              'manifest-black': '#0a0a0a',
+              'manifest-white': '#ffffff',
+              'tech-accent': '#00cc00', 
+              'cyan-neon': '#00f0ff',
+              'gold-premium': '#ffd700',
+            },
+            animation: {
+              'spin-slow': 'spin 20s linear infinite',
+              'spin-super-slow': 'spin 60s linear infinite',
+              'spin-reverse-slow': 'spin 40s linear infinite reverse',
+              'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'scan': 'scan 4s linear infinite',
+              'scanner-line': 'scannerLine 3s ease-in-out infinite',
+              'float': 'float 8s ease-in-out infinite',
+              'float-delayed': 'float 10s ease-in-out infinite 2s',
+              'wing-flap': 'wingFlap 0.2s infinite alternate',
+              'bird-fly': 'birdFly 20s linear infinite',
+              'twinkle': 'twinkle 4s ease-in-out infinite',
+              'firefly': 'firefly 10s ease-in-out infinite alternate',
+              'rotate-3d': 'rotate3d 20s linear infinite',
+              'rotate-3d-reverse': 'rotate3dReverse 15s linear infinite',
+              'hud-spin': 'hudSpin 10s linear infinite',
+              'hud-tick': 'hudTick 4s ease-in-out infinite',
+              'ripple': 'ripple 3s cubic-bezier(0, 0.2, 0.8, 1) infinite',
+              'radar-sweep': 'radarSweep 4s linear infinite',
+              'snap-hand': 'snapHand 0.3s ease-in-out forwards',
+              'shockwave': 'shockwaveExpand 1.5s cubic-bezier(0.1, 0.6, 0.2, 1) forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'text-cycle': 'textCycle 3s ease-in-out infinite',
+              'progress-indeterminate': 'progressIndeterminate 2s infinite linear',
+              'blink': 'blink 1s steps(2, start) infinite',
+              'loader-circle': 'loaderCircle 2s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+              'story-fade': 'storyFade 0.8s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.5s ease-out forwards',
+              'curtain-reveal': 'curtainReveal 1s ease-in-out forwards',
+            },
+            keyframes: {
+              scan: {
+                '0%': { backgroundPosition: '0% 0%' },
+                '100%': { backgroundPosition: '0% 100%' },
+              },
+              curtainReveal: {
+                '0%': { transform: 'scaleY(1)' },
+                '100%': { transform: 'scaleY(0)' },
+              },
+              scannerLine: {
+                '0%': { top: '0%' },
+                '50%': { top: '100%' },
+                '100%': { top: '0%' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              wingFlap: {
+                '0%': { transform: 'scaleY(1)' },
+                '100%': { transform: 'scaleY(0.5)' }, 
+              },
+              birdFly: {
+                '0%': { transform: 'translateX(-10vw) translateY(10vh) scale(0.5)' },
+                '100%': { transform: 'translateX(110vw) translateY(-20vh) scale(0.5)' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.3', transform: 'scale(0.8)' },
+                '50%': { opacity: '1', transform: 'scale(1.2)' },
+              },
+              firefly: {
+                '0%': { transform: 'translate(0, 0) scale(1)', opacity: '0.6' },
+                '25%': { transform: 'translate(20px, -30px) scale(1.2)', opacity: '1' },
+                '50%': { transform: 'translate(-20px, -50px) scale(0.8)', opacity: '0.6' },
+                '75%': { transform: 'translate(30px, -20px) scale(1.2)', opacity: '1' },
+                '100%': { transform: 'translate(0, 0) scale(1)', opacity: '0.6' },
+              },
+              rotate3d: {
+                '0%': { transform: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)' },
+                '100%': { transform: 'rotateX(360deg) rotateY(720deg) rotateZ(360deg)' },
+              },
+              rotate3dReverse: {
+                '0%': { transform: 'rotateX(360deg) rotateY(360deg) rotateZ(360deg)' },
+                '100%': { transform: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)' },
+              },
+              hudSpin: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              hudTick: {
+                 '0%, 100%': { transform: 'scale(1)' },
+                 '50%': { transform: 'scale(0.95)' }
+              },
+              radarSweep: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              ripple: {
+                '0%': { transform: 'scale(0)', opacity: '1' },
+                '100%': { transform: 'scale(4)', opacity: '0' },
+              },
+              snapHand: {
+                '0%': { transform: 'rotate(0deg)' },
+                '50%': { transform: 'rotate(-15deg)' },
+                '100%': { transform: 'rotate(0deg)' },
+              },
+              shockwaveExpand: {
+                '0%': { transform: 'scale(0)', opacity: '1' },
+                '100%': { transform: 'scale(200)', opacity: '0' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(100%)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              progressIndeterminate: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              blink: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' }
+              },
+              loaderCircle: {
+                '0%': { transform: 'rotate(0deg)', strokeDasharray: '1, 200', strokeDashoffset: '0' },
+                '50%': { transform: 'rotate(180deg)', strokeDasharray: '100, 200', strokeDashoffset: '-15px' },
+                '100%': { transform: 'rotate(360deg)', strokeDasharray: '100, 200', strokeDashoffset: '-125px' }
+              },
+              storyFade: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' }
+              },
+              slideInRight: {
+                '0%': { transform: 'translateX(100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #fafafa;
+        color: #0a0a0a;
+        overflow-x: hidden;
+        cursor: none; 
+        transition: background-color 1.5s ease, color 1.5s ease;
+      }
+      body.dark {
+        background-color: #050505;
+        color: #ffffff;
+      }
+      
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      .animated-grid {
+        background-size: 60px 60px;
+        background-image: 
+          linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+      }
+      body.dark .animated-grid {
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      }
+
+      .sun-glow {
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,240,200,0.8) 20%, rgba(255,200,0,0.4) 40%, rgba(255,100,0,0.1) 70%, transparent 100%);
+        filter: blur(10px);
+      }
+      
+      .moon-texture {
+        background-color: #e2e8f0;
+        background-image: 
+          radial-gradient(circle at 30% 30%, rgba(0,0,0,0.1) 0%, transparent 20%),
+          radial-gradient(circle at 70% 60%, rgba(0,0,0,0.1) 0%, transparent 15%),
+          radial-gradient(circle at 40% 80%, rgba(0,0,0,0.05) 0%, transparent 10%);
+        box-shadow: 0 0 30px rgba(200, 220, 255, 0.4);
+      }
+
+      /* Custom Cursor */
+      .cursor-dot, .cursor-outline {
+        position: fixed;
+        top: 0; left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+        transition: background-color 0.2s, border-color 0.2s;
+      }
+      .cursor-dot { width: 8px; height: 8px; background-color: #000; }
+      .cursor-outline {
+        width: 40px; height: 40px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+      }
+      
+      body.dark .cursor-dot { background-color: #fff; }
+      body.dark .cursor-outline { border-color: rgba(255, 255, 255, 0.5); }
+      
+      body:hover .cursor-outline { opacity: 1; }
+      
+      .clip-corner {
+        clip-path: polygon(
+          0 0, 
+          100% 0, 
+          100% calc(100% - 20px), 
+          calc(100% - 20px) 100%, 
+          0 100%
+        );
+      }
+      
+      .clip-diamond {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+
+      /* 3D Cube Styles */
+      .preserve-3d { transform-style: preserve-3d; }
+      .perspective-1000 { perspective: 1000px; }
+      .cube-face {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border: 1px solid currentColor;
+        background: rgba(0, 0, 0, 0.02); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: visible;
+        box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+      }
+      body.dark .cube-face {
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+      }
+      .cube-face-inner {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 1px solid currentColor;
+        background: rgba(0, 204, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(0, 204, 0, 0.4);
+      }
+      .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(60px); }
+      .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(60px); }
+      .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(60px); }
+      .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(60px); }
+      .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(60px); }
+      .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); }
+      .cube-face-inner:nth-child(1) { transform: rotateY(0deg) translateZ(30px); }
+      .cube-face-inner:nth-child(2) { transform: rotateY(180deg) translateZ(30px); }
+      .cube-face-inner:nth-child(3) { transform: rotateY(90deg) translateZ(30px); }
+      .cube-face-inner:nth-child(4) { transform: rotateY(-90deg) translateZ(30px); }
+      .cube-face-inner:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
+      .cube-face-inner:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      body.dark ::-webkit-scrollbar-thumb {
+        background: #444;
+      }
+      body.dark ::-webkit-scrollbar-thumb:hover {
+        background: #666;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <script>
+      const cursorDot = document.querySelector('.cursor-dot');
+      const cursorOutline = document.querySelector('.cursor-outline');
+      
+      window.addEventListener('mousemove', (e) => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+        cursorOutline.animate({
+          left: `${e.clientX}px`,
+          top: `${e.clientY}px`
+        }, { duration: 500, fill: "forwards" });
+      });
+
+      document.addEventListener('mouseover', (e) => {
+        const target = e.target;
+        const isInteractive = target.closest('.interactive') || target.tagName === 'A' || target.tagName === 'BUTTON' || target.closest('button') || target.closest('a');
+        
+        const isDark = document.body.classList.contains('dark');
+        // Only set white cursor if element is explicitly dark background (like images)
+        const isDarkElement = target.closest('.bg-black');
+
+        if (isInteractive) {
+          cursorOutline.style.width = '60px';
+          cursorOutline.style.height = '60px';
+          cursorOutline.style.backgroundColor = 'rgba(0, 204, 0, 0.15)'; 
+          cursorOutline.style.borderColor = '#00cc00';
+          cursorDot.style.backgroundColor = '#00cc00';
+        } else {
+          cursorOutline.style.width = '40px';
+          cursorOutline.style.height = '40px';
+          cursorOutline.style.backgroundColor = 'transparent';
+          
+          if (isDark) {
+             // Dark mode: Always white cursor
+             cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+             cursorDot.style.backgroundColor = '#ffffff';
+          } else {
+             // Day mode: Black cursor unless over dark element
+             if (isDarkElement) {
+                cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                cursorDot.style.backgroundColor = '#ffffff';
+             } else {
+                cursorOutline.style.borderColor = 'rgba(0, 0, 0, 0.5)';
+                cursorDot.style.backgroundColor = '#000000';
+             }
+          }
+        }
+      });
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
