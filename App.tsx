@@ -927,10 +927,10 @@ const StatsSection = ({ isDark }: { isDark: boolean }) => (
 const Footer = ({ isDark }: { isDark: boolean }) => {
    const [copied, setCopied] = useState(false);
    const socialLinks = [
-      { name: 'TWITTER', icon: Twitter, url: 'https://sizar.devnames.com' },
-      { name: 'GITHUB', icon: Github, url: 'https://sizar.devnames.com' },
-      { name: 'LINKEDIN', icon: Linkedin, url: 'https://sizar.devnames.com' },
-      { name: 'TELEGRAM', icon: MessageCircle, url: 'https://sizar.devnames.com' },
+      { name: 'TWITTER', icon: Twitter, url: 'https://x.com/gmstree' },
+      { name: 'GITHUB', icon: Github, url: 'https://github.com/Gmstree' },
+      { name: 'LINKEDIN', icon: Linkedin, url: 'https://www.linkedin.com/in/sizar-in' },
+      { name: 'TELEGRAM', icon: MessageCircle, url: 'https://t.me/Sizar0_o' },
    ];
 
    const handleCopy = () => {
