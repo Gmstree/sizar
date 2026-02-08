@@ -788,7 +788,7 @@ const BlueprintProjectCard = ({ project, index, isDark }: { project: any, index:
                 
                 <h3 className={`text-4xl md:text-5xl font-black uppercase mb-4 tracking-tighter relative inline-block transition-colors duration-1000 ${isDark ? 'text-white' : 'text-black'}`}>
                    {project.name}
-                   <span className="absolute -top-2 -right-2 text-[10px] text-gray-400 font-normal tracking-normal border border-gray-200 px-1 rounded-full">v1.0</span>
+                   <span className="absolute -top-2 -right-2 text-[10px] text-gray-400 font-normal tracking-normal border border-gray-200 px-1 rounded-full"></span>
                 </h3>
 
                 <div className={`text-xs font-bold px-3 py-1 mb-6 tracking-widest inline-block ${isComingSoon ? 'bg-gray-800 text-white' : (isDark ? 'bg-white text-black' : 'bg-black text-white')}`}>
