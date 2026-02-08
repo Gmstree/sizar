@@ -638,7 +638,7 @@ const AboutSection = ({ isDark }: { isDark: boolean }) => {
 
                <div className={`font-mono text-sm leading-relaxed space-y-6 ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
                   <p className="border-l-2 border-tech-accent pl-4">
-                     I am a <strong className={isDark ? 'text-white' : 'text-black'}>Full-Stack Product Builder</strong> with a BS in Computer Science & Engineering. My journey began in <strong className={isDark ? 'text-white' : 'text-black'}>Cybersecurity</strong>, but I quickly realized my passion lay in creating tangible products.
+                     I am a <strong className={isDark ? 'text-white' : 'text-black'}>Full-Stack Product Builder</strong> with a B.Sc in Computer Science & Engineering. My journey began in <strong className={isDark ? 'text-white' : 'text-black'}>Cybersecurity</strong>, but I quickly realized my passion lay in creating tangible products.
                   </p>
                   <p>
                      Today, I blend my technical background with <strong className={isDark ? 'text-white' : 'text-black'}>UI/UX design</strong> and <strong className={isDark ? 'text-white' : 'text-black'}>AI-driven development</strong> to build and ship complex applications single-handedly.
