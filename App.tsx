@@ -166,7 +166,7 @@ const PremiumLoader = ({ onComplete }: { onComplete: () => void }) => {
             <div className="absolute bottom-0 left-0 h-1 bg-tech-accent transition-all duration-100 ease-out" style={{ width: `${progress}%` }}></div>
         </div>
     );
-};
+};  
 
 // --- STORY OVERLAY COMPONENT (Single Continuous Block) ---
 const StoryOverlay = ({ isOpen, onClose, isDark }: { isOpen: boolean, onClose: () => void, isDark: boolean }) => {
@@ -528,10 +528,10 @@ const ResumeOverlay = ({ isOpen, onClose, isDark }: { isOpen: boolean, onClose: 
 
                     {/* Footer Bar */}
                     <div className="bg-gray-100 p-6 border-t border-gray-200 text-center font-mono text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <div className="flex items-center gap-2"><Fingerprint size={12}/> SIZAR_DEV</div>
+                        <div className="flex items-center gap-2"><Fingerprint size={12}/> SIZAR_DEV </div>
                         <div className="flex gap-6">
                             <span className="flex items-center gap-2"><MapPin size={10} /> 23.81° N, 90.41° E</span>
-                            <span className="flex items-center gap-2"><Lock size={10} /> VERIFIED</span>
+                            <span className="flex items-center gap-2"><Lock size={10} /> VERIFIED </span>
                         </div>
                     </div>
                 </div>
