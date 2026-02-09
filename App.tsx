@@ -8,7 +8,7 @@ import {
   Twitter, Github, Linkedin, MessageCircle, Mail, Copy, Check, 
   FileJson, Smartphone, Server, Radio, Clock,
   FileCode, AppWindow, Braces, GitBranch, Package, Layout,
-  Monitor, HardDrive, BookOpen, X, Atom, Target, Menu
+  Monitor, HardDrive, BookOpen, X, Atom, Target, Menu, FileText, Briefcase, Printer, ArrowLeft, Quote, Compass
 } from 'lucide-react';
 
 // --- Data ---
@@ -68,7 +68,7 @@ const PROJECTS = [
     category: 'Launchpad',
     status: 'COMING SOON',
     url: '#',
-    imageUrl: 'data:image/jpeg;base64,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', 
+    imageUrl: 'data:image/jpeg;base64,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', 
     tech: ['PyTorch', 'LLMs', 'Vector DB'],
     description: 'By building a platform that prioritizes ownership and growth.'
   }
@@ -76,9 +76,9 @@ const PROJECTS = [
 
 // --- Components ---
 
-const Reveal = ({ children, className = "", delay = 0 }) => {
+const Reveal = ({ children, className = "", delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(entry.target); }
@@ -239,6 +239,307 @@ const StoryOverlay = ({ isOpen, onClose, isDark }: { isOpen: boolean, onClose: (
     );
 };
 
+// --- RESUME PAGE COMPONENT (Replaced Overlay) ---
+const ResumeOverlay = ({ isOpen, onClose, isDark }: { isOpen: boolean, onClose: () => void, isDark: boolean }) => {
+    if (!isOpen) return null;
+
+    const [copiedEmail1, setCopiedEmail1] = useState(false);
+    const [copiedEmail2, setCopiedEmail2] = useState(false);
+
+    const handleCopy = (email: string, setFn: (val: boolean) => void) => {
+        navigator.clipboard.writeText(email);
+        setFn(true);
+        setTimeout(() => setFn(false), 2000);
+    };
+
+    return (
+        <div className={`fixed inset-0 z-[200] overflow-y-auto animate-fade-in cursor-auto ${isDark ? 'bg-[#111]' : 'bg-[#f3f4f6]'}`}>
+            <style>{`
+                @media print {
+                    @page { margin: 0; size: auto; }
+                    body { background: white; }
+                    body * { visibility: hidden; }
+                    #resume-content, #resume-content * { visibility: visible; }
+                    #resume-content {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        max-width: none;
+                        margin: 0;
+                        padding: 0;
+                        background-color: white !important;
+                        color: black !important;
+                        box-shadow: none;
+                        border: none;
+                    }
+                    .no-print { display: none !important; }
+                    /* Ensure icons print well */
+                    svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                }
+            `}</style>
+            
+            {/* Top Bar for Controls */}
+             <div className={`sticky top-0 z-[210] w-full flex justify-between items-center px-4 py-4 md:px-8 md:py-6 backdrop-blur-md border-b no-print ${isDark ? 'bg-black/80 border-white/10' : 'bg-white/80 border-black/10'}`}>
+                <button 
+                    onClick={onClose} 
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-mono font-bold transition-all hover:bg-opacity-80 ${isDark ? 'text-white hover:bg-white/10' : 'text-black hover:bg-black/5'}`}
+                >
+                    <ArrowLeft size={18} /> RETURN
+                </button>
+                
+                <div className={`text-sm font-mono tracking-widest hidden md:block opacity-50 ${isDark ? 'text-white' : 'text-black'}`}>
+                    RESUME
+                </div>
+
+                <div className="w-8"></div> {/* Spacer for alignment since download button removed */}
+            </div>
+
+            {/* Resume Page Container - Centered */}
+            <div className="min-h-screen w-full flex justify-center p-0 md:p-8 lg:p-12 pb-24">
+                <div id="resume-content" className="relative w-full max-w-5xl bg-white text-black shadow-2xl flex flex-col md:rounded-sm overflow-hidden min-h-[1200px]">
+                    
+                    {/* Header Section */}
+                    <div className="p-8 md:p-12 pb-8 border-b-2 border-black">
+                        <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+                            <div className="order-2 md:order-1">
+                                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-2 uppercase leading-none">ABDUL MONAIM SIZAR</h1>
+                                <p className="text-sm md:text-base font-mono text-gray-600 tracking-widest uppercase mb-6 mt-4">FULL-STACK PRODUCT BUILDER & AI-AUGMENTED ENGINEER</p>
+                            </div>
+                            <div className="order-1 md:order-2 w-full md:w-auto flex justify-center md:justify-end mb-6 md:mb-0">
+                                <img 
+                                    src="https://avatars.githubusercontent.com/u/183996840?v=4" 
+                                    alt="Sizar Profile" 
+                                    className="w-32 h-32 rounded-full border-4 border-gray-200 shadow-lg object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Contact Grid */}
+                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            {/* Email 1 */}
+                            <div className="group relative border border-gray-300 hover:border-black p-4 transition-all duration-300 bg-gray-50 hover:bg-white rounded-sm">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-black text-white rounded-sm group-hover:bg-tech-accent group-hover:text-black transition-colors">
+                                            <Mail size={16} />
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors">Primary Contact</div>
+                                            <div className="font-mono font-bold text-sm sm:text-base break-all">sizar.web@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <button 
+                                        onClick={() => handleCopy('sizar.web@gmail.com', setCopiedEmail1)}
+                                        className="p-2 hover:bg-gray-100 rounded-full transition-colors active:scale-90"
+                                    >
+                                        {copiedEmail1 ? <Check size={16} className="text-green-600" /> : <Copy size={16} className="text-gray-400 group-hover:text-black" />}
+                                    </button>
+                                </div>
+                            </div>
+
+                             {/* Email 2 */}
+                             <div className="group relative border border-gray-300 hover:border-black p-4 transition-all duration-300 bg-gray-50 hover:bg-white rounded-sm">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-black text-white rounded-sm group-hover:bg-tech-accent group-hover:text-black transition-colors">
+                                            <Briefcase size={16} />
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors">Work Protocol</div>
+                                            <div className="font-mono font-bold text-sm sm:text-base break-all">sizar@prufprotocol.io</div>
+                                        </div>
+                                    </div>
+                                    <button 
+                                        onClick={() => handleCopy('sizar@prufprotocol.io', setCopiedEmail2)}
+                                        className="p-2 hover:bg-gray-100 rounded-full transition-colors active:scale-90"
+                                    >
+                                        {copiedEmail2 ? <Check size={16} className="text-green-600" /> : <Copy size={16} className="text-gray-400 group-hover:text-black" />}
+                                    </button>
+                                </div>
+                            </div>
+                         </div>
+                         
+                         <div className="flex flex-wrap gap-6 mt-8 text-sm font-mono text-gray-600 pt-6 border-t border-dashed border-gray-300">
+                            <span className="flex items-center gap-2 hover:text-black transition-colors cursor-default"><MapPin size={14} className="text-tech-accent" /> Dhaka, Bangladesh</span>
+                            <a href="https://sizar.devnames.com" target="_blank" className="flex items-center gap-2 hover:text-black transition-colors hover:underline decoration-tech-accent"><Globe size={14} className="text-tech-accent" /> sizar.devnames.com</a>
+                         </div>
+                    </div>
+
+                    <div className="flex flex-col md:grid md:grid-cols-3 min-h-[800px]">
+                        {/* Left Sidebar (Skills & Education) */}
+                        <div className="order-2 md:order-1 bg-gray-50 p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-200">
+                            {/* Skills Section */}
+                            <div className="mb-12">
+                                <h3 className="text-lg font-black uppercase tracking-widest border-b-2 border-black pb-2 mb-6 flex items-center gap-2">
+                                    <Cpu size={18} /> TECHNICAL SKILLS
+                                </h3>
+                                
+                                <div className="space-y-8">
+                                    <div>
+                                        <div className="text-xs font-bold uppercase text-gray-400 mb-3 flex items-center gap-2"><Code2 size={12}/> Core Stack</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['JavaScript (ES6+)', 'React.js', 'Next.js', 'Node.js', 'Python', 'Tailwind CSS'].map(s => (
+                                                <span key={s} className="px-2 py-1 bg-white border border-gray-300 text-[10px] font-bold shadow-sm hover:border-black transition-all cursor-default">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="text-xs font-bold uppercase text-gray-400 mb-3 flex items-center gap-2"><Brain size={12}/> AI Engineering</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Agentic Workflows', 'Cursor/Claude', 'Prompt Eng.', 'LLM Integration'].map(s => (
+                                                <span key={s} className="px-2 py-1 bg-white border border-gray-300 text-[10px] font-bold shadow-sm hover:border-black transition-all cursor-default">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                     <div>
+                                        <div className="text-xs font-bold uppercase text-gray-400 mb-3 flex items-center gap-2"><Hexagon size={12}/> Web3</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Decentralized Logic', 'Wallet-less Arch', 'Solidity (Basic)'].map(s => (
+                                                <span key={s} className="px-2 py-1 bg-white border border-gray-300 text-[10px] font-bold shadow-sm hover:border-black transition-all cursor-default">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="text-xs font-bold uppercase text-gray-400 mb-3 flex items-center gap-2"><PenTool size={12}/> Design</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['UI/UX (Figma)', 'Hi-Fi Prototyping', 'Motion Graphics'].map(s => (
+                                                <span key={s} className="px-2 py-1 bg-white border border-gray-300 text-[10px] font-bold shadow-sm hover:border-black transition-all cursor-default">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="text-xs font-bold uppercase text-gray-400 mb-3 flex items-center gap-2"><Terminal size={12}/> Tools</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Git', 'Docker', 'Vercel', 'Linux', 'MongoDB', 'PostgreSQL'].map(s => (
+                                                <span key={s} className="px-2 py-1 bg-white border border-gray-300 text-[10px] font-bold shadow-sm hover:border-black transition-all cursor-default">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Education */}
+                             <div className="mb-12">
+                                <h3 className="text-lg font-black uppercase tracking-widest border-b-2 border-black pb-2 mb-6 flex items-center gap-2">
+                                    <BookOpen size={18} /> EDUCATION
+                                </h3>
+                                <div className="bg-white p-4 border border-gray-200 shadow-sm">
+                                    <div className="font-bold text-sm leading-tight mb-2">B.Sc. in Computer Science & Engineering (CSE)</div>
+                                    <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">Current Undergraduate Student</div>
+                                    <p className="text-[11px] text-gray-600 leading-relaxed font-mono">
+                                        Focus: System Architecture, AI-Driven Development, Human-Computer Interaction.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Interests */}
+                             <div className="mb-12">
+                                <h3 className="text-lg font-black uppercase tracking-widest border-b-2 border-black pb-2 mb-6 flex items-center gap-2">
+                                    <Compass size={18} /> INTERESTS
+                                </h3>
+                                <div className="space-y-4">
+                                     <div className="text-xs leading-relaxed text-gray-700">
+                                        <strong className="block text-black mb-1">Notebook Collecting:</strong> Passionate about collecting analog notebooks for sketching architectural ideas.
+                                     </div>
+                                     <div className="text-xs leading-relaxed text-gray-700">
+                                        <strong className="block text-black mb-1">Product Research:</strong> Constantly deconstructing successful apps to understand their growth loops.
+                                     </div>
+                                     <div className="text-xs leading-relaxed text-gray-700">
+                                        <strong className="block text-black mb-1">Traveling:</strong> Exploring new environments to fuel creative design thinking.
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Main Content (Experience & Projects) */}
+                        <div className="order-1 md:order-2 md:col-span-2 p-8 md:p-12">
+                             
+                             {/* MOVED SUMMARY HERE */}
+                             <div className="mb-12">
+                                <h3 className="text-lg sm:text-2xl font-black uppercase tracking-widest border-b-2 border-black pb-2 mb-6 flex items-center gap-2 whitespace-nowrap">
+                                    <Quote size={24} /> PROFESSIONAL SYNOPSIS
+                                </h3>
+                                <div className="text-sm leading-relaxed text-gray-700 font-medium space-y-4">
+                                    <p><strong className="text-black">Founder of Pruf Protocol:</strong> Architected a decentralized verification layer (vcFi) validating authentic human engagement without APIs/Wallets.</p>
+                                    <p><strong className="text-black">Solo-Builder & AI Expert:</strong> Leverage agentic AI workflows (Claude/Gemini) to deploy production-grade full-stack applications single-handedly, equivalent to a 5-person engineering team.</p>
+                                    <p><strong className="text-black">Rapid Execution:</strong> Scaled Pruf Protocol to 227+ organic users with zero marketing budget by leveraging viral growth mechanics.</p>
+                                </div>
+                             </div>
+
+                             {/* Experience */}
+                             <div className="mb-12">
+                                <h3 className="text-2xl font-black uppercase tracking-widest border-b-2 border-black pb-2 mb-8 flex items-center gap-2">
+                                    <Activity size={24} /> EXPERIENCE
+                                </h3>
+
+                                <div className="space-y-12 relative">
+                                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gray-200"></div>
+
+                                    {/* Item 1 */}
+                                    <div className="relative pl-8 group">
+                                        <div className="absolute left-0 top-2 w-4 h-4 rounded-full border-4 border-white bg-black shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                            <h4 className="text-xl font-black uppercase group-hover:text-tech-accent transition-colors">PRUF PROTOCOL</h4>
+                                            <span className="font-mono text-[10px] font-bold bg-black text-white px-2 py-1 tracking-wider mt-1 sm:mt-0 w-fit">OCT 2025 — PRESENT</span>
+                                        </div>
+                                        <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">Founder & Lead Engineer <span className="w-1 h-1 bg-gray-400 rounded-full"></span> Remote</div>
+                                        <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2 leading-relaxed marker:text-black">
+                                            <li><strong>Invented "Proof-of-Mention" (PoM):</strong> Built a proprietary verification engine that validates social engagement using 12-step logic checks (Anti-Bot, Duplicate Entry, AI Artifacts).</li>
+                                            <li><strong>Full-Stack Architecture:</strong> Designed and deployed the entire ecosystem (Next.js Frontend, Node.js Backend, Database) solo, ensuring 99.9% uptime.</li>
+                                            <li><strong>Product Strategy:</strong> Identified the collapse of "InfoFi" and pivoted to "Verification Content Finance (vcFi)," positioning the protocol as a trust-layer for Web3.</li>
+                                            <li><strong>User Growth:</strong> Achieved 227+ active users purely through product-led growth and community trust building.</li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Item 2 */}
+                                    <div className="relative pl-8 group">
+                                        <div className="absolute left-0 top-2 w-4 h-4 rounded-full border-4 border-white bg-gray-400 shadow-sm z-10 group-hover:scale-125 transition-transform group-hover:bg-black"></div>
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                            <h4 className="text-xl font-black uppercase group-hover:text-tech-accent transition-colors">GMSTREE</h4>
+                                            <span className="font-mono text-[10px] font-bold bg-gray-100 text-gray-600 px-2 py-1 tracking-wider mt-1 sm:mt-0 w-fit border border-gray-200">TELEGRAM MINI-APP PLATFORM</span>
+                                        </div>
+                                        <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">Founder & Tech Lead <span className="w-1 h-1 bg-gray-400 rounded-full"></span> Remote</div>
+                                        <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2 leading-relaxed marker:text-gray-400 group-hover:marker:text-black">
+                                            <li>Founded a Telegram-based "Play-to-Earn" gaming ecosystem.</li>
+                                            <li>Developed the MVP game mechanics and integrated Telegram API for seamless user onboarding.</li>
+                                            <li>Managed product roadmap and community engagement strategies before pausing due to funding constraints.</li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Item 3 */}
+                                     <div className="relative pl-8 group">
+                                        <div className="absolute left-0 top-2 w-4 h-4 rounded-full border-4 border-white bg-gray-400 shadow-sm z-10 group-hover:scale-125 transition-transform group-hover:bg-black"></div>
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                            <h4 className="text-xl font-black uppercase group-hover:text-tech-accent transition-colors">TRADESPY</h4>
+                                            <span className="font-mono text-[10px] font-bold bg-gray-100 text-gray-600 px-2 py-1 tracking-wider mt-1 sm:mt-0 w-fit border border-gray-200">FINTECH & TRADING TOOLS</span>
+                                        </div>
+                                        <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">Lead Developer & Product Designer <span className="w-1 h-1 bg-gray-400 rounded-full"></span> Remote</div>
+                                        <ul className="list-disc ml-4 text-sm text-gray-700 space-y-2 leading-relaxed marker:text-gray-400 group-hover:marker:text-black">
+                                            <li>Developed automated signal distribution tools for crypto trading communities.</li>
+                                            <li>Designed high-fidelity dashboards for profit/loss tracking, improving data visualization for retail traders.</li>
+                                            <li>Automated reporting workflows, reducing manual effort by 90%.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    {/* Footer Bar */}
+                    <div className="bg-gray-100 p-6 border-t border-gray-200 text-center font-mono text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div className="flex items-center gap-2"><Fingerprint size={12}/> SIZAR_DEV</div>
+                        <div className="flex gap-6">
+                            <span className="flex items-center gap-2"><MapPin size={10} /> 23.81° N, 90.41° E</span>
+                            <span className="flex items-center gap-2"><Lock size={10} /> VERIFIED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 // --- Nature Elements ---
 
 const BirdSilhouette = ({ delay, scale = 1, top, left }: { delay: number, scale?: number, top: string, left: string }) => (
@@ -351,7 +652,7 @@ const BackgroundEffects = ({ isDark }: { isDark: boolean }) => (
   </div>
 );
 
-const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleTheme: () => void, onOpenStory: () => void }) => {
+const NavBar = ({ isDark, toggleTheme, onOpenStory, onOpenResume }: { isDark: boolean, toggleTheme: () => void, onOpenStory: () => void, onOpenResume: () => void }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (e: React.MouseEvent, id: string) => {
@@ -378,10 +679,6 @@ const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleT
       
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-10 text-[10px] font-mono font-bold tracking-widest relative z-50">
-        <button onClick={onOpenStory} className="hover:text-tech-accent transition-colors interactive relative group cursor-pointer">
-            STORY
-            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-tech-accent group-hover:w-full transition-all"></span>
-        </button>
         {navItems.map(item => {
            const [id, label] = item.split(':');
            return (
@@ -391,6 +688,14 @@ const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleT
             </a>
            );
         })}
+        <button onClick={onOpenResume} className="hover:text-tech-accent transition-colors interactive relative group cursor-pointer flex items-center gap-1">
+            RESUME
+            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-tech-accent group-hover:w-full transition-all"></span>
+        </button>
+        <button onClick={onOpenStory} className="hover:text-tech-accent transition-colors interactive relative group cursor-pointer">
+            STORY
+            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-tech-accent group-hover:w-full transition-all"></span>
+        </button>
       </div>
 
       <div className="flex items-center gap-4">
@@ -415,12 +720,6 @@ const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleT
     {/* Mobile Menu Overlay */}
     {isMobileMenuOpen && (
         <div className={`fixed inset-0 z-40 pt-24 px-6 md:hidden flex flex-col gap-6 backdrop-blur-xl transition-all duration-300 ${isDark ? 'bg-black/90 text-white' : 'bg-white/95 text-black'}`}>
-            <button 
-                onClick={() => { onOpenStory(); setIsMobileMenuOpen(false); }} 
-                className="text-xl font-bold font-mono tracking-widest border-b pb-4 text-left hover:text-tech-accent transition-colors"
-            >
-                &gt;&gt; ACCESS_STORY
-            </button>
             {navItems.map(item => {
                 const [id, label] = item.split(':');
                 return (
@@ -434,13 +733,23 @@ const NavBar = ({ isDark, toggleTheme, onOpenStory }: { isDark: boolean, toggleT
                 </a>
                 );
             })}
+            <button 
+                onClick={() => { onOpenResume(); setIsMobileMenuOpen(false); }} 
+                className="text-xl font-bold font-mono tracking-widest border-b pb-4 text-left hover:text-tech-accent transition-colors flex items-center gap-2"
+            >
+                ACCESS_RESUME
+            </button>
+            <button 
+                onClick={() => { onOpenStory(); setIsMobileMenuOpen(false); }} 
+                className="text-xl font-bold font-mono tracking-widest border-b pb-4 text-left hover:text-tech-accent transition-colors"
+            >
+                ACCESS_STORY
+            </button>
         </div>
     )}
     </>
   );
 };
-
-// ... [Previous Hero, Creative, About Components remain largely the same, included below for completeness] ...
 
 const Hero = ({ isDark }: { isDark: boolean }) => {
   const scrollToId = (id: string) => {
@@ -589,7 +898,7 @@ const CreativeSection = ({ isDark }: { isDark: boolean }) => (
    </section>
 );
 
-const AboutSection = ({ isDark }: { isDark: boolean }) => {
+const AboutSection = ({ isDark, onOpenResume }: { isDark: boolean, onOpenResume: () => void }) => {
    const [time, setTime] = useState('');
 
    useEffect(() => {
@@ -630,7 +939,7 @@ const AboutSection = ({ isDark }: { isDark: boolean }) => {
                    </div>
                    
                    <div className="space-y-2">
-                       <div className={`text-xs font-mono tracking-widest ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>IDENTIFIER_CODE</div>
+                       <div className={`text-xs font-mono tracking-widest ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Overview</div>
                        <div className={`text-xl font-bold font-mono ${isDark ? 'text-white' : 'text-black'}`}>SIZAR_DEV</div>
                        <div className="h-1 w-20 bg-tech-accent"></div>
                    </div>
@@ -648,6 +957,13 @@ const AboutSection = ({ isDark }: { isDark: boolean }) => {
                   </p>
                </div>
                
+               <button 
+                    onClick={onOpenResume}
+                    className={`mt-8 inline-flex items-center gap-2 px-6 py-3 font-bold tracking-widest transition-all group border text-xs font-mono ${isDark ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'}`}
+               >
+                    ACCESS_RESUME_DATA <ArrowDownRight size={16} />
+               </button>
+
                <div className="mt-10 flex gap-6">
                    <div className={`flex items-center gap-3 px-4 py-2 border ${isDark ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'}`}>
                        <MapPin size={16} className="text-tech-accent" />
@@ -952,7 +1268,7 @@ const Footer = ({ isDark }: { isDark: boolean }) => {
                         <span className={`${isDark ? 'text-transparent bg-clip-text bg-gradient-to-r from-tech-accent to-white' : 'text-tech-accent'}`}>BUILD.</span>
                     </h2>
                     <p className="text-gray-400 mb-10 max-w-md text-lg leading-relaxed">
-                        Ready to engineer something extraordinary? Direct communication line established.
+                        Ready to engineer something extraordinary? Let’s connect directly.
                     </p>
                     
                     {/* Clean Email Display - Strictly Single Line on Mobile/PC */}
@@ -1016,11 +1332,12 @@ const Footer = ({ isDark }: { isDark: boolean }) => {
    );
 };
 
-export default function App() {
+export function App() {
   const [isDark, setIsDark] = useState(false);
   const [manualOverride, setManualOverride] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showStory, setShowStory] = useState(false);
+  const [showResume, setShowResume] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -1051,12 +1368,13 @@ export default function App() {
     <>
       {isLoading && <PremiumLoader onComplete={() => setIsLoading(false)} />}
       <StoryOverlay isOpen={showStory} onClose={() => setShowStory(false)} isDark={isDark} />
+      <ResumeOverlay isOpen={showResume} onClose={() => setShowResume(false)} isDark={isDark} />
       
       <div className={`min-h-screen relative transition-colors duration-1000 ${isDark ? 'bg-[#050505]' : 'bg-[#fafafa]'}`}>
         <BackgroundEffects isDark={isDark} />
-        <NavBar isDark={isDark} toggleTheme={toggleTheme} onOpenStory={() => setShowStory(true)} />
+        <NavBar isDark={isDark} toggleTheme={toggleTheme} onOpenStory={() => setShowStory(true)} onOpenResume={() => setShowResume(true)} />
         <Hero isDark={isDark} />
-        <AboutSection isDark={isDark} />
+        <AboutSection isDark={isDark} onOpenResume={() => setShowResume(true)} />
         <CreativeSection isDark={isDark} />
         <ProjectsSection isDark={isDark} />
         <StatsSection isDark={isDark} />
