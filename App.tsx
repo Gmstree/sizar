@@ -620,7 +620,7 @@ const AboutSection = ({ isDark }: { isDark: boolean }) => {
                        <div className="absolute inset-0 rounded-full border-2 border-tech-accent animate-pulse"></div>
                        <div className={`absolute -inset-2 rounded-full border border-dashed animate-spin-slow ${isDark ? 'border-white/30' : 'border-black/30'}`}></div>
                        <img 
-                          src="https://pbs.twimg.com/profile_images/2014408273420525571/7NPqToMn_400x400.jpg" 
+                          src="https://avatars.githubusercontent.com/u/183996840?v=4" 
                           alt="Sizar" 
                           className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-xl"
                        />
